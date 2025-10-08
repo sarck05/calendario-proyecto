@@ -1,0 +1,27 @@
+{
+  "name": "calendario-ucompensar",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanDavidCadenaVera/CALENDARIO-UCOMPENSAR.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuanDavidCadenaVera/CALENDARIO-UCOMPENSAR/issues"
+  },
+  "homepage": "https://github.com/JuanDavidCadenaVera/CALENDARIO-UCOMPENSAR#readme",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "resend": "^6.0.3"
+  }
+}
