@@ -1,0 +1,410 @@
+/* ====== Fondo con overlay ====== */
+.fondo {
+  background: url("fondo-registro.jpg") no-repeat center center/cover;
+  position: fixed;  
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.fondo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+/* ====== Contenedor principal ====== */
+.row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  height: 100vh;
+  gap: 5.625rem;  
+  margin: 0;  
+  padding: 0; 
+  width: 100vw;
+}
+
+.col-md-8,
+.col-md-6 {
+  padding: 0;
+}
+
+/* ====== Circulo del Koala ====== */
+.mascota {
+  background-color: #fefae0;
+  border-radius: 50%;
+  width: 22.5rem;
+  height: 22.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0.3125rem 1.25rem rgba(0,0,0,0.3);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* ====== Formulario Registro ====== */
+.registro {
+  background-color: #ff6700;
+  border-radius: 0.9375rem;
+  padding: 1.875rem;
+  width: 26.25rem;
+  min-height: 31.25rem;
+  box-shadow: 0 0.3125rem 1.25rem rgba(0,0,0,0.4);
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.registro h2 {
+  text-align: center;
+  margin-bottom: 1.5625rem;
+  font-weight: bold;
+  color: white;
+}
+
+.registro form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+  flex-grow: 1;
+}
+
+/* ==== Inputs ==== */
+.registro input {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.registro input:focus {
+  border: 0.125rem solid #050803;
+  box-shadow: 0 0 0.625rem #000000;
+}
+
+/* ==== Input de contraseña con icono ==== */
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 2.5rem; /* espacio para el ojo */
+  box-sizing: border-box;
+}
+
+.password-wrapper i {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666;
+  font-size: 1.125rem;
+  transition: color 0.3s ease;
+}
+
+.password-wrapper i.active {
+  color: #28a745;
+}
+
+/* ==== Botón ==== */
+.registro button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #081c15;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1.25rem;
+  transition: background 0.3s;
+  color: white;
+}
+
+.registro button:hover {
+  background: #2d6a4f;
+}
+
+/* ====== Línea de Login ====== */
+.register-line {
+  margin-top: 1.5625rem;
+  text-align: center;
+  font-size: 0.9375rem;
+  color: white;
+  position: relative;
+}
+
+.register-line::before,
+.register-line::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 15%;
+  height: 0.0625rem;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.register-line::before { left: 0; }
+.register-line::after { right: 0; }
+
+.register-line a {
+  margin-left: 0.5rem;
+  color: #081c15;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.register-line a:hover {
+  color: #2d6a4f;
+}
+
+/* ====== Koala general ====== */
+.koala {
+  position: relative;
+  width: 12.5rem;
+  height: 16.25rem;
+  margin: 0 auto;
+}
+
+/* ====== Orejas ====== */
+.ear {
+  width: 4.0625rem;
+  height: 4.0625rem;
+  background: #b0b0b0;
+  border-radius: 50%;
+  position: absolute;
+  top: 1.25rem;
+  z-index: 0;
+}
+
+.left-ear { left: -1.5625rem; }
+.right-ear { right: -1.5625rem; }
+
+/* ====== Cabeza ====== */
+.head {
+  width: 11.25rem;
+  height: 11.25rem;
+  background: #c4c4c4;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  overflow: hidden; 
+}
+
+/* ====== Ojos ====== */
+.eye {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 4.0625rem;
+  overflow: hidden;
+}
+
+.eye::after {
+  content: "";
+  width: 0.75rem;
+  height: 0.75rem;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.375rem;
+  left: 0.375rem;
+}
+
+.left-eye { left: 2.8125rem; }
+.right-eye { right: 2.8125rem; }
+
+.closed::after {
+  top: 0.6875rem;
+  height: 0.125rem;
+  width: 1rem;
+  left: 0.25rem;
+  background: black;
+  border-radius: 0;
+}
+
+/* Abrir ojos al mostrar clave */
+.koala.show-eyes .eye::after {
+  top: 0.375rem;
+  height: 0.75rem;
+  width: 0.75rem;
+  border-radius: 50%;
+}
+
+/* ====== Gafas ====== */
+.glasses {
+  position: absolute;
+  top: 3.75rem;
+  left: 1.875rem;
+  width: 7.5rem;
+  height: 2.5rem;
+  border: 0.25rem solid black;
+  border-radius: 0.625rem;
+}
+
+.glasses::before,
+.glasses::after {
+  content: "";
+  position: absolute;
+  top: -0.25rem;
+  width: 2.8125rem;
+  height: 2.5rem;
+  border: 0.25rem solid black;
+  border-radius: 0.625rem;
+}
+
+.glasses::before { left: -0.25rem; }
+.glasses::after { right: -0.25rem; }
+
+/* ====== Línea de Login ====== */
+.register-line {
+  margin-top: 1.5625rem;
+  text-align: center;
+  font-size: 0.9375rem;
+  color: white;
+  position: relative;
+}
+
+.register-line::before,
+.register-line::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 15%;
+  height: 0.0625rem;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.register-line::before { left: 0; }
+.register-line::after { right: 0; }
+
+.register-line a {
+  margin-left: 0.5rem;
+  color: #081c15;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.register-line a:hover {
+  color: #2d6a4f;
+}
+
+/* ====== Koala general ====== */
+.koala {
+  position: relative;
+  width: 12.5rem;
+  height: 16.25rem;
+  margin: 0 auto;
+}
+
+/* ====== Orejas ====== */
+.ear {
+  width: 4.0625rem;
+  height: 4.0625rem;
+  background: #b0b0b0;
+  border-radius: 50%;
+  position: absolute;
+  top: 1.25rem;
+  z-index: 0;
+}
+
+.left-ear { left: -1.5625rem; }
+.right-ear { right: -1.5625rem; }
+
+/* ====== Cabeza ====== */
+.head {
+  width: 11.25rem;
+  height: 11.25rem;
+  background: #c4c4c4;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  overflow: hidden; 
+}
+
+/* ====== Ojos ====== */
+.eye {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 4.0625rem;
+  overflow: hidden;
+}
+
+.eye::after {
+  content: "";
+  width: 0.75rem;
+  height: 0.75rem;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.375rem;
+  left: 0.375rem;
+}
+
+.left-eye { left: 2.8125rem; }
+.right-eye { right: 2.8125rem; }
+
+.closed::after {
+  top: 0.6875rem;
+  height: 0.125rem;
+  width: 1rem;
+  left: 0.25rem;
+  background: black;
+  border-radius: 0;
+}
+
+/* Abrir ojos al mostrar clave */
+.koala.show-eyes .eye::after {
+  top: 0.375rem;
+  height: 0.75rem;
+  width: 0.75rem;
+  border-radius: 50%;
+}
+
+/* ====== Gafas ====== */
+.glasses {
+  position: absolute;
+  top: 3.75rem;
+  left: 1.875rem;
+  width: 7.5rem;
+  height: 2.5rem;
+  border: 0.25rem solid black;
+  border-radius: 0.625rem;
+}
+
+.glasses::before,
+.glasses::after {
+  content: "";
+  position: absolute;
+  top: -0.25rem;
+  width: 2.8125rem;
+  height: 2.5rem;
+  border: 0.25rem solid black;
+  border-radius: 0.625rem;
+}
+
+.glasses::before { left: -0.25rem; }
+.glasses::after { right: -0.25rem; }
