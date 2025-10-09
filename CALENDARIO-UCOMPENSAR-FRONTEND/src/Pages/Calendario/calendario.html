@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calendario Eventos Ucompensar</title>
+    <link rel="stylesheet" href="../../../public/css/calendario.css" />
+    <!-- Agrega jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <!-- MENU -->
+  <div id="menu-placeholder"></div>
+
+  <main class="calendar-wrapper">
+      <header class="calendar-header">
+          <button class="nav-button" id="prevButton">&lt;</button>
+          <div class="header-nav">
+              <h1 id="currentPeriod"></h1>
+          </div>
+          <button class="nav-button" id="nextButton">&gt;</button>
+
+          <!-- Selector de Vista -->
+          <div class="view-selector">
+              <button class="view-button active" data-view="month">Mes</button>
+              <button class="view-button" data-view="week">Semana</button>
+              <button class="view-button" data-view="day">Día</button>
+          </div>
+      </header>
+      <section class="calendar-body">
+          <!-- Vista de Mes -->
+          <div class="month-view" id="monthView">
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Dom</th>
+                          <th>Lun</th>
+                          <th>Mar</th>
+                          <th>Mié</th>
+                          <th>Jue</th>
+                          <th>Vie</th>
+                          <th>Sáb</th>
+                      </tr>
+                  </thead>
+                  <tbody id="calendarDays"></tbody>
+              </table>
+          </div>
+
+          <!-- Vista de Semana -->
+          <div class="week-view" id="weekView">
+              <div class="week-grid" id="weekGrid"></div>
+          </div>
+
+          <!-- Vista de Día -->
+          <div class="day-view" id="dayView">
+              <div class="day-date" id="dayDate"></div>
+              <div class="day-events" id="dayEvents"></div>
+          </div>
+      </section>
+  </main>
+
+<div>
+  <script>
+    // Carga el menú después de que jQuery esté listo
+    $(function () {
+      $("#menu-placeholder").load("../../src/Components/menu.html");
+    });
+  </script>
+</div>
+
+  <script src="../../../public/js/calendario.js"></script>
+</body>
+</html>
