@@ -27,7 +27,7 @@
   justify-content: center; 
   align-items: center;     
   height: 100vh;
-  gap: 5.625rem;  
+  gap: 90px;  
   margin: 0;  
   padding: 0; 
   width: 100vw;
@@ -42,12 +42,12 @@
 .mascota {
   background-color: #fefae0;
   border-radius: 50%;
-  width: 22.5rem;
-  height: 22.5rem;
+  width: 360px;
+  height: 360px;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0.3125rem 1.25rem rgba(0,0,0,0.3);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -55,11 +55,11 @@
 /* ====== Formulario Registro ====== */
 .registro {
   background-color: #ff6700;
-  border-radius: 0.9375rem;
-  padding: 1.875rem;
-  width: 26.25rem;
-  min-height: 31.25rem;
-  box-shadow: 0 0.3125rem 1.25rem rgba(0,0,0,0.4);
+  border-radius: 15px;
+  padding: 30px;
+  width: 420px;
+  min-height: 500px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
   color: #000000;
   display: flex;
   flex-direction: column;
@@ -68,7 +68,7 @@
 
 .registro h2 {
   text-align: center;
-  margin-bottom: 1.5625rem;
+  margin-bottom: 25px;
   font-weight: bold;
   color: white;
 }
@@ -76,23 +76,23 @@
 .registro form {
   display: flex;
   flex-direction: column;
-  gap: 1.125rem;
+  gap: 18px;
   flex-grow: 1;
 }
 
 /* ==== Inputs ==== */
 .registro input {
-  padding: 0.75rem;
-  border-radius: 0.5rem;
+  padding: 12px;
+  border-radius: 8px;
   border: none;
   outline: none;
-  font-size: 1rem;
+  font-size: 16px;
   transition: all 0.3s ease;
 }
 
 .registro input:focus {
-  border: 0.125rem solid #050803;
-  box-shadow: 0 0 0.625rem #000000;
+  border: 2px solid #050803;
+  box-shadow: 0 0 10px #000000;
 }
 
 /* ==== Input de contraseña con icono ==== */
@@ -103,18 +103,18 @@
 
 .password-wrapper input {
   width: 100%;
-  padding-right: 2.5rem; /* espacio para el ojo */
+  padding-right: 40px; /* espacio para el ojo */
   box-sizing: border-box;
 }
 
 .password-wrapper i {
   position: absolute;
   top: 50%;
-  right: 0.75rem;
+  right: 12px;
   transform: translateY(-50%);
   cursor: pointer;
   color: #666;
-  font-size: 1.125rem;
+  font-size: 18px;
   transition: color 0.3s ease;
 }
 
@@ -124,13 +124,13 @@
 
 /* ==== Botón ==== */
 .registro button {
-  padding: 0.75rem;
+  padding: 12px;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   background: #081c15;
-  font-size: 1rem;
+  font-size: 16px;
   cursor: pointer;
-  margin-top: 1.25rem;
+  margin-top: 20px;
   transition: background 0.3s;
   color: white;
 }
@@ -141,9 +141,9 @@
 
 /* ====== Línea de Login ====== */
 .register-line {
-  margin-top: 1.5625rem;
+  margin-top: 25px;
   text-align: center;
-  font-size: 0.9375rem;
+  font-size: 15px;
   color: white;
   position: relative;
 }
@@ -154,7 +154,7 @@
   position: absolute;
   top: 50%;
   width: 15%;
-  height: 0.0625rem;
+  height: 1px;
   background: rgba(255, 255, 255, 0.4);
 }
 
@@ -162,7 +162,7 @@
 .register-line::after { right: 0; }
 
 .register-line a {
-  margin-left: 0.5rem;
+  margin-left: 8px;
   color: #081c15;
   font-weight: bold;
   text-decoration: none;
@@ -176,29 +176,29 @@
 /* ====== Koala general ====== */
 .koala {
   position: relative;
-  width: 12.5rem;
-  height: 16.25rem;
+  width: 200px;
+  height: 260px;
   margin: 0 auto;
 }
 
 /* ====== Orejas ====== */
 .ear {
-  width: 4.0625rem;
-  height: 4.0625rem;
+  width: 65px;
+  height: 65px;
   background: #b0b0b0;
   border-radius: 50%;
   position: absolute;
-  top: 1.25rem;
+  top: 20px;
   z-index: 0;
 }
 
-.left-ear { left: -1.5625rem; }
-.right-ear { right: -1.5625rem; }
+.left-ear { left: -25px; }
+.right-ear { right: -25px; }
 
 /* ====== Cabeza ====== */
 .head {
-  width: 11.25rem;
-  height: 11.25rem;
+  width: 180px;
+  height: 180px;
   background: #c4c4c4;
   border-radius: 50%;
   position: relative;
@@ -209,202 +209,149 @@
 
 /* ====== Ojos ====== */
 .eye {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 24px;
+  height: 24px;
   background: white;
   border-radius: 50%;
   position: absolute;
-  top: 4.0625rem;
+  top: 65px;
   overflow: hidden;
 }
 
 .eye::after {
   content: "";
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 12px;
+  height: 12px;
   background: black;
   border-radius: 50%;
   position: absolute;
-  top: 0.375rem;
-  left: 0.375rem;
+  top: 6px;
+  left: 6px;
 }
 
-.left-eye { left: 2.8125rem; }
-.right-eye { right: 2.8125rem; }
+.left-eye { left: 45px; }
+.right-eye { right: 45px; }
 
 .closed::after {
-  top: 0.6875rem;
-  height: 0.125rem;
-  width: 1rem;
-  left: 0.25rem;
+  top: 11px;
+  height: 2px;
+  width: 16px;
+  left: 4px;
   background: black;
   border-radius: 0;
 }
 
 /* Abrir ojos al mostrar clave */
 .koala.show-eyes .eye::after {
-  top: 0.375rem;
-  height: 0.75rem;
-  width: 0.75rem;
+  top: 6px;
+  height: 12px;
+  width: 12px;
   border-radius: 50%;
 }
 
 /* ====== Gafas ====== */
 .glasses {
   position: absolute;
-  top: 3.75rem;
-  left: 1.875rem;
-  width: 7.5rem;
-  height: 2.5rem;
-  border: 0.25rem solid black;
-  border-radius: 0.625rem;
+  top: 60px;
+  left: 30px;
+  width: 120px;
+  height: 40px;
+  border: 4px solid black;
+  border-radius: 10px;
 }
 
 .glasses::before,
 .glasses::after {
   content: "";
   position: absolute;
-  top: -0.25rem;
-  width: 2.8125rem;
-  height: 2.5rem;
-  border: 0.25rem solid black;
-  border-radius: 0.625rem;
+  top: -4px;
+  width: 45px;
+  height: 40px;
+  border: 4px solid black;
+  border-radius: 10px;
 }
 
-.glasses::before { left: -0.25rem; }
-.glasses::after { right: -0.25rem; }
+.glasses::before { left: -4px; }
+.glasses::after { right: -4px; }
 
-/* ====== Línea de Login ====== */
-.register-line {
-  margin-top: 1.5625rem;
-  text-align: center;
-  font-size: 0.9375rem;
-  color: white;
-  position: relative;
-}
-
-.register-line::before,
-.register-line::after {
-  content: "";
+/* ====== Nariz ====== */
+.nose {
+  width: 35px;
+  height: 55px;
+  background: #333;
+  border-radius: 50% / 60%;
   position: absolute;
-  top: 50%;
-  width: 15%;
-  height: 0.0625rem;
-  background: rgba(255, 255, 255, 0.4);
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
 }
 
-.register-line::before { left: 0; }
-.register-line::after { right: 0; }
-
-.register-line a {
-  margin-left: 0.5rem;
-  color: #081c15;
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.register-line a:hover {
-  color: #2d6a4f;
-}
-
-/* ====== Koala general ====== */
-.koala {
-  position: relative;
-  width: 12.5rem;
-  height: 16.25rem;
-  margin: 0 auto;
-}
-
-/* ====== Orejas ====== */
-.ear {
-  width: 4.0625rem;
-  height: 4.0625rem;
-  background: #b0b0b0;
-  border-radius: 50%;
+/* ====== Boca ====== */
+.mouth {
+  width: 40px;
+  height: 18px;
+  border-bottom: 3px solid black;
+  border-radius: 0 0 40px 40px;
   position: absolute;
-  top: 1.25rem;
+  top: 135px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ====== Cuerpo ====== */
+.body {
+  width: 130px;
+  height: 110px;
+  background: #d0d0d0;
+  border-radius: 60px 60px 40px 40px;
+  position: absolute;
+  top: 165px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 0;
 }
 
-.left-ear { left: -1.5625rem; }
-.right-ear { right: -1.5625rem; }
-
-/* ====== Cabeza ====== */
-.head {
-  width: 11.25rem;
-  height: 11.25rem;
+/* ====== Manos ====== */
+.hand {
+  width: 50px;
+  height: 55px;
   background: #c4c4c4;
   border-radius: 50%;
-  position: relative;
+  position: absolute;
+  top: 175px;
   z-index: 1;
-  margin: 0 auto;
-  overflow: hidden; 
+  transition: all 0.4s ease;
 }
 
-/* ====== Ojos ====== */
-.eye {
-  width: 1.5rem;
-  height: 1.5rem;
-  background: white;
-  border-radius: 50%;
-  position: absolute;
-  top: 4.0625rem;
-  overflow: hidden;
+.left-hand { left: -20px; }
+.right-hand { right: -20px; }
+
+.cover-eyes .left-hand {
+  top: 75px;
+  left: 25px;
+  transform: rotate(20deg);
 }
 
-.eye::after {
-  content: "";
-  width: 0.75rem;
-  height: 0.75rem;
-  background: black;
-  border-radius: 50%;
-  position: absolute;
-  top: 0.375rem;
-  left: 0.375rem;
+.cover-eyes .right-hand {
+  top: 75px;
+  right: 25px;
+  transform: rotate(-20deg);
 }
 
-.left-eye { left: 2.8125rem; }
-.right-eye { right: 2.8125rem; }
-
-.closed::after {
-  top: 0.6875rem;
-  height: 0.125rem;
-  width: 1rem;
-  left: 0.25rem;
-  background: black;
-  border-radius: 0;
+/* ===== ATRAS ===== */
+.atras a{
+  position: absolute;   
+  top: 20px;            
+  left: 20px;           
+  font-size: 40px;      
+  color: white;        
+  cursor: pointer;      
+  z-index: 1000;        
+  transition: transform 0.2s ease, color 0.3s ease;
 }
 
-/* Abrir ojos al mostrar clave */
-.koala.show-eyes .eye::after {
-  top: 0.375rem;
-  height: 0.75rem;
-  width: 0.75rem;
-  border-radius: 50%;
+.atras:hover a{
+  transform: scale(1.1);
+  color: #ddd; 
 }
-
-/* ====== Gafas ====== */
-.glasses {
-  position: absolute;
-  top: 3.75rem;
-  left: 1.875rem;
-  width: 7.5rem;
-  height: 2.5rem;
-  border: 0.25rem solid black;
-  border-radius: 0.625rem;
-}
-
-.glasses::before,
-.glasses::after {
-  content: "";
-  position: absolute;
-  top: -0.25rem;
-  width: 2.8125rem;
-  height: 2.5rem;
-  border: 0.25rem solid black;
-  border-radius: 0.625rem;
-}
-
-.glasses::before { left: -0.25rem; }
-.glasses::after { right: -0.25rem; }

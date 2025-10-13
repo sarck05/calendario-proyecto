@@ -17,19 +17,10 @@
     padding: 0;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 1rem;
-}
 
 /* --- Contenedor Principal del Calendario --- */
 .calendar-wrapper {
+    margin-top: 15px;
     background-color: #ffffff;
     border-radius: 20px;
     box-shadow: var(--shadow);
@@ -63,7 +54,6 @@ body {
 }
 
 .calendar-header h1 {
-    font-size: 2rem;
     font-weight: 600;
 }
 
@@ -93,15 +83,14 @@ body {
     display: flex;
     background-color: rgba(255, 255, 255, 0.15);
     border-radius: 50px;
-    padding: 4px;
+    padding: 15px;
+    gap: 5px;
 }
 
 .view-button {
     background: transparent;
     border: none;
     color: white;
-    padding: 0.5rem 1.2rem;
-    font-size: 1rem;
     font-weight: 500;
     border-radius: 50px;
     cursor: pointer;
@@ -139,7 +128,7 @@ body {
 .month-view th {
     font-weight: 600;
     color: var(--color-text-light);
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
     background-color: #f8f9fa;
     padding: 1rem 0;
@@ -147,7 +136,7 @@ body {
 
 .month-view td {
     height: 120px;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.2s;
@@ -258,7 +247,7 @@ body {
 .event {
     background-color: #ff7675; /* Rojo coral pastel */
     color: white;
-    font-size: 0.75rem;
+    font-size: 1rem;
     padding: 2px 6px;
     border-radius: 10px;
     margin-top: 4px;
@@ -280,3 +269,6 @@ body {
     .week-grid { grid-template-columns: 1fr; }
     .day-date { font-size: 2rem; }
 }
+
+
+
