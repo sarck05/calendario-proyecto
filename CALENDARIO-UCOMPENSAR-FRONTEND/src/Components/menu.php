@@ -5,6 +5,7 @@ $nombre = $logeado ? $_SESSION['usuario_nombre'] : '';
 $rol = $logeado ? $_SESSION['usuario_rol'] : '';
 ?>
 <!-- COMPONENTE: MENÚ PRINCIPAL -->
+ 
 <link rel="stylesheet" href="/public/css/estructura.css">
 <div class="container-fluid menu-container">
   <div class="row menu-row">

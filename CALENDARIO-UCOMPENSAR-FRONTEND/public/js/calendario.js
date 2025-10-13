@@ -204,28 +204,46 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- Eventos de ejemplo ---
-    function getEventsForDate(date) {
-        const events = [];
-        if (date.getMonth() === today.getMonth() && date.getFullYear() === today.getFullYear()) {
-            if (date.getDate() === 15) events.push({ title: 'Reunión importante', type: 'work' });
-            if (date.getDate() === 22) events.push({ title: 'Cumpleaños', type: 'personal' });
-            if (date.getDate() === 28) events.push({ title: 'Médico', type: 'personal' });
-        }
-        return events;
-    }
+// --- Eventos reales desde la base de datos ---
+function getEventsForDate(date) {
+    const eventsForDay = [];
+    const y = date.getFullYear();
+    const m = (date.getMonth() + 1).toString().padStart(2, '0');
+    const d = date.getDate().toString().padStart(2, '0');
+    const formatted = `${y}-${m}-${d}`;
 
-    function addEventsToContainer(container, date) {
-        const events = getEventsForDate(date);
-        container.dataset.date = date.toISOString();
-        events.forEach(event => {
-            const eventEl = document.createElement('div');
-            eventEl.classList.add('event', event.type);
-            eventEl.textContent = event.title;
-            container.appendChild(eventEl);
-        });
-        if (events.length > 0) container.classList.add('has-event');
-    }
+    if (!Array.isArray(eventos)) return eventsForDay;
+
+    eventos.forEach(ev => {
+        // Evita errores si 'fecha' no está bien formateada
+        const eventDate = ev.fecha.split(' ')[0]; // por si viene con hora
+        if (eventDate === formatted) {
+            eventsForDay.push({
+                title: ev.nombre,
+                type: ev.tipo || 'general',
+                descripcion: ev.descripcion || ''
+            });
+        }
+    });
+
+    return eventsForDay;
+}
+
+// --- Añadir eventos al contenedor ---
+function addEventsToContainer(container, date) {
+    const events = getEventsForDate(date);
+    container.dataset.date = date.toISOString();
+
+    events.forEach(event => {
+        const eventEl = document.createElement('div');
+        eventEl.classList.add('event', event.type);
+        eventEl.textContent = event.title;
+        eventEl.title = event.descripcion;
+        container.appendChild(eventEl);
+    });
+
+    if (events.length > 0) container.classList.add('has-event');
+}
 
     // --- Navegación ---
     prevButton.addEventListener('click', () => {
