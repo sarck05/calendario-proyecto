@@ -18,7 +18,6 @@ session_start(); // Para manejar el menú dinámico según sesión
   <style>
     body {
       background-color: #f5f8fa;
-      padding-top: 90px; /* espacio para menú fijo */
     }
     .form-container {
       max-width: 600px;

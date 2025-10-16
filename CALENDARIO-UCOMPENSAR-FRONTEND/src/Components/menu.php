@@ -1,5 +1,8 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 $logeado = isset($_SESSION['usuario_id']);
 $nombre = $logeado ? $_SESSION['usuario_nombre'] : '';
 $rol = $logeado ? $_SESSION['usuario_rol'] : '';
