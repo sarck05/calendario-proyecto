@@ -13,7 +13,7 @@ proyecto calendario universitario equipado con capacidad de publicacion de event
 
 4//Una vez realizado todo este proceso la apertura se realizara en su navegador de preferencia bajo la direccion localhost:8000 
 
-Ag ​radecemos a todos aquellos que se hayan interesado en el proyecto
+Agradecemos a todos aquellos que se hayan interesado en el proyecto
  ​ ​
  ​
  ​
