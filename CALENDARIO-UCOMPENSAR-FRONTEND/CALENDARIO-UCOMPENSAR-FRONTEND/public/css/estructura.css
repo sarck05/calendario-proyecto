@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+/* ====== TITULOS ====== */
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 10px 0;
+}
+
+h4, h5, h6 {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  color: #ddd;
+  margin: 5px 0;
+}
+
+p {
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #eee;
+}
+
+/* ====== LINKS ====== */
+a {
+  font-family: 'Lora', serif;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: orange;
+}
+
+/* ====== BOTONES ===== */
+button, .btn {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border: none;
+  background-color: orange;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: #ff9c33;
+}
+
+/* ====== MENÚ SUPERIOR ===== */
+.menu-container {
+  background: #fff;
+  position: relative;
+  z-index: 1000;
+}
+
+.menu-row {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* ====== LOGO ===== */
+.menu-logo img {
+  max-height: 160px;
+  width: auto;
+  margin-left: 15px;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ====== LINKS DEL MENÚ ===== */
+.navbar-nav {
+  margin-left: 20px;
+}
+
+.navbar-nav > li > a {
+  display: inline-block;
+  padding: 0 10px;
+  color: black;
+  line-height: 80px;
+  vertical-align: middle;
+  transition: color 0.2s ease;
+  text-decoration: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus {
+  color: orange;
+  text-decoration: none;
+}
+
+/* ====== MENÚ PRINCIPAL Y SESIÓN ===== */
+.menu-principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+}
+
+.menu-sesion {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+/* ====== SUBMENÚ (dropdown) ===== */
+.dropdown-menu {
+  border-radius: 8px;
+  padding: 8px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border: none;
+  min-width: 180px;
+  animation: fadeDown 0.25s ease;
+  margin-top: 5px;
+  font-family: 'Lora', serif;
+}
+
+.dropdown-menu > li > a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.dropdown-menu > li > a:hover {
+  background-color: #f5f5f5;
+  color: orange;
+  border-radius: 6px;
+  padding-left: 25px;
+}
+
+/* Animación del dropdown */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== SECCIÓN PRINCIPAL ===== */
+.central {
+  height: 673px;
+  margin: 0;
+}
+
+.central-tip {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  color: #fff;
+  padding: 70px 40px;
+  box-sizing: border-box;
+}
+
+/* ====== TÍTULO PRINCIPAL ===== */
+.central-tip h1 {
+  margin-top: 55px  ;
+  font-size: 75px;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+/* ====== PÁRRAFO ===== */
+.central-tip p {
+  font-size: 22px;
+  max-width: 900px;
+  text-align: center;
+  line-height: 1.8;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ====== BOTÓN ESTILIZADO ===== */
+.btn-style700 {
+  position: relative;
+  border: 1px solid #006466; 
+  color: #f0ffff;             
+  border-radius: 4px;
+  background: transparent;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  padding: 12px 30px;
+  font-size: 18px;
+  text-decoration: none !important;
+  display: inline-block;
+  margin-top: 30px;
+}
+
+.btn-style700:hover {
+  background-color: #006466;  
+  color: #f6bd60;                
+  border-color: #006466;      
+}
+
+.btn-style700::before,
+.btn-style700::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  border-style: solid;
+  border-color: #006466;
+  border-radius: 4px;
+  transition: all 0.35s;
+}
+
+.btn-style700::before {
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-width: 1px 0 1px 0;
+}
+
+.btn-style700::after {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  border-width: 0 1px 0 1px;
+}
+
+.btn-style700:hover::before {
+  width: 100%;
+  border-width: 1px 0 1px 0;
+}
+
+.btn-style700:hover::after {
+  height: 100%;
+  border-width: 0 1px 0 1px;
+}
+
+/* ======= CARRUSEL FONDO ======== */
+.carrusel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.carrusel-items {
+  display: flex;
+  width: 400%;
+  height: 100%;
+  animation: scroll 50s linear infinite;
+}
+
+.carrusel-item {
+  width: 25%; 
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.carrusel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-75%);
+  }
+}
+
+.carrusel:hover .carrusel-items {
+  animation-play-state: paused;
+}
+
+/* SECCION FINAL */ 
+.final {
+  margin: 0;
+  height: 80px;
+  background-color: #023047;
+  width: 100%;
+}
