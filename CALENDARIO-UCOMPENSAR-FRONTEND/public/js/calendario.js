@@ -219,6 +219,7 @@ function getEventsForDate(date) {
         const eventDate = ev.fecha.split(' ')[0]; // por si viene con hora
         if (eventDate === formatted) {
             eventsForDay.push({
+                id: ev.id,
                 title: ev.nombre,
                 type: ev.tipo || 'general',
                 descripcion: ev.descripcion || ''
@@ -239,6 +240,9 @@ function addEventsToContainer(container, date) {
         eventEl.classList.add('event', event.type);
         eventEl.textContent = event.title;
         eventEl.title = event.descripcion;
+        // Agregamos el ID del evento como un atributo de datos
+        eventEl.dataset.eventId = event.id;
+        eventEl.style.cursor = 'pointer'; // Añadimos un cursor de mano para indicar que es clicable
         container.appendChild(eventEl);
     });
 
@@ -308,6 +312,16 @@ function addEventsToContainer(container, date) {
             currentView = button.dataset.view;
             renderCalendar();
         });
+    });
+
+    // --- Event listener para clic en eventos ---
+    document.addEventListener('click', e => {
+        const eventEl = e.target.closest('.event');
+        if (eventEl && eventEl.dataset.eventId) {
+            const eventoId = eventEl.dataset.eventId;
+            // 👇 CAMBIO CLAVE: Usamos una ruta absoluta desde la raíz del proyecto
+            window.location.href = `/src/Pages/Eventos/Eventos.php?id=${eventoId}`;
+        }
     });
 
     // --- Inicializar ---

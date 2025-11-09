@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-10-2025 a las 09:54:32
+-- Tiempo de generación: 09-11-2025 a las 23:26:43
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 7.4.33
 
@@ -84,6 +84,7 @@ CREATE TABLE `eventos` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `descripcion` text DEFAULT NULL,
+  `imagen` varchar(255) DEFAULT NULL,
   `tipo` varchar(50) DEFAULT NULL,
   `fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -92,18 +93,18 @@ CREATE TABLE `eventos` (
 -- Volcado de datos para la tabla `eventos`
 --
 
-INSERT INTO `eventos` (`id`, `nombre`, `descripcion`, `tipo`, `fecha`) VALUES
-(1, 'Reunión Académica', 'Revisión de plan de estudios', 'Académico', '2025-10-15 09:00:00'),
-(2, 'Charla de Liderazgo', 'Charla motivacional para estudiantes', 'Institucional', '2025-10-22 14:00:00'),
-(3, 'Partido Intercarreras', 'Competencia deportiva anual', 'Deportivo', '2025-10-18 16:00:00'),
-(4, 'Taller de Programación', 'Aprende fundamentos de JavaScript', 'Taller', '2025-10-20 10:00:00'),
-(5, 'Evaluación Final', 'Examen del curso de bases de datos', 'Académico', '2025-11-02 08:00:00'),
-(6, 'Seminario de Innovación', 'Conferencias sobre nuevas tecnologías', 'Seminario', '2025-11-10 09:00:00'),
-(7, 'Festival Cultural', 'Presentaciones artísticas y música', 'Cultural', '2025-10-25 18:00:00'),
-(8, 'Jornada de Bienestar', 'Actividades de salud y recreación', 'Institucional', '2025-11-05 09:00:00'),
-(9, 'Sesión Virtual de Tutoría', 'Asesoría en línea de matemáticas', 'Virtual', '2025-10-28 17:00:00'),
-(10, 'Reunión de Profesores', 'Planificación académica 2025', 'Académico', '2025-10-30 11:00:00'),
-(12, 'Prueba Numero 1', 'Prueba', 'Gamer', '2025-10-13 07:50:00');
+INSERT INTO `eventos` (`id`, `nombre`, `descripcion`, `imagen`, `tipo`, `fecha`) VALUES
+(1, 'Reunión Académica', 'Revisión de plan de estudios', NULL, 'Académico', '2025-10-15 09:00:00'),
+(2, 'Charla de Liderazgo', 'Charla motivacional para estudiantes', NULL, 'Institucional', '2025-10-22 14:00:00'),
+(3, 'Partido Intercarreras', 'Competencia deportiva anual', NULL, 'Deportivo', '2025-10-18 16:00:00'),
+(4, 'Taller de Programación', 'Aprende fundamentos de JavaScript', NULL, 'Taller', '2025-10-20 10:00:00'),
+(5, 'Evaluación Final', 'Examen del curso de bases de datos', NULL, 'Académico', '2025-11-02 08:00:00'),
+(6, 'Seminario de Innovación', 'Conferencias sobre nuevas tecnologías', NULL, 'Seminario', '2025-11-10 09:00:00'),
+(7, 'Festival Cultural', 'Presentaciones artísticas y música', NULL, 'Cultural', '2025-10-25 18:00:00'),
+(8, 'Jornada de Bienestar', 'Actividades de salud y recreación', NULL, 'Institucional', '2025-11-05 09:00:00'),
+(9, 'Sesión Virtual de Tutoría', 'Asesoría en línea de matemáticas', NULL, 'Virtual', '2025-10-28 17:00:00'),
+(10, 'Reunión de Profesores', 'Planificación académica 2025', NULL, 'Académico', '2025-10-30 11:00:00'),
+(12, 'Prueba Numero 1', 'Prueba', 'evento_69111242a8932.jpg', 'Gamer', '2025-10-13 07:50:00');
 
 -- --------------------------------------------------------
 
@@ -137,9 +138,9 @@ INSERT INTO `evento_etiquetas` (`id`, `evento_id`, `etiqueta_id`) VALUES
 (13, 9, 7),
 (14, 10, 1),
 (15, 10, 2),
-(17, 12, 2),
-(18, 12, 3),
-(19, 12, 8);
+(35, 12, 2),
+(36, 12, 3),
+(37, 12, 8);
 
 -- --------------------------------------------------------
 
@@ -201,7 +202,9 @@ INSERT INTO `inscripciones` (`id`, `usuario_id`, `evento_id`, `fecha_registro`, 
 (7, 10, 7, '2025-10-12 23:49:49', 'Asistió', 'Activo', 'Buena presentación'),
 (8, 4, 6, '2025-10-12 23:49:49', 'Pendiente', 'Activo', 'Primera participación'),
 (9, 5, 8, '2025-10-12 23:49:49', 'Asistió', 'Activo', 'Buen aporte'),
-(10, 6, 9, '2025-10-12 23:49:49', 'Pendiente', 'Activo', 'Conectará desde casa');
+(10, 6, 9, '2025-10-12 23:49:49', 'Pendiente', 'Activo', 'Conectará desde casa'),
+(11, 4, 12, '2025-11-09 16:16:46', '0', 'activo', NULL),
+(12, 1, 1, '2025-11-09 16:49:00', '0', 'activo', NULL);
 
 -- --------------------------------------------------------
 
@@ -225,7 +228,7 @@ INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `clave`, `rol`) VALUES
 (1, 'Administrador', 'admin@correo.com', '$2y$10$Y8kZFTDlcSaw0xqfPt/VlOMoUkOquUTQ5pzGP1x80FoS21U16280e', 'admin'),
 (2, 'Profesor Juan', 'juan@correo.com', '$2y$10$V06q8vzby.KHpEiiXjb6qOsnMxyFqfu/mUlpTNva9TbQozd8Y4KKG', 'profesor'),
 (3, 'Profesor María', 'maria@correo.com', '$2y$10$qkjwc1wEUm5g3Cr.H4EiaulD7Ox7gd2kcPxJ1ZfTahVZy7R7sQtdC', 'profesor'),
-(4, 'Estudiante Pedro', 'pedro@correo.com', '$2y$10$CXtnTNinq0cuQL7U.UCdae.gb8fiJ5shDqDestqcmwYTGIp.nE1cC', 'estudiante'),
+(4, 'Estudiante Pedro', 'pedro@correo.com', '$2y$10$Y8kZFTDlcSaw0xqfPt/VlOMoUkOquUTQ5pzGP1x80FoS21U16280e', 'estudiante'),
 (5, 'Estudiante Laura', 'laura@correo.com', '$2y$10$bIwizkfiOYe7pz9r33ybYuap3Y5svIAz1fwbAWLfOEDUm38QPtWLG', 'estudiante'),
 (6, 'Estudiante Carlos', 'carlos@correo.com', '$2y$10$Yf6MTG7WZD9crMpegYieTeujw92pPjBGyPD53FWneXEIZQ6CcZeDi', 'estudiante'),
 (7, 'Estudiante Sofía', 'sofia@correo.com', '$2y$10$k5WLlLeEJEn8OEDQCE6vYuvH1Y78GbtDEFzmpxE2yl.6CUN3cz39y', 'estudiante'),
@@ -335,7 +338,7 @@ ALTER TABLE `eventos`
 -- AUTO_INCREMENT de la tabla `evento_etiquetas`
 --
 ALTER TABLE `evento_etiquetas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `gestion_eventos`
@@ -347,7 +350,7 @@ ALTER TABLE `gestion_eventos`
 -- AUTO_INCREMENT de la tabla `inscripciones`
 --
 ALTER TABLE `inscripciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

@@ -2,26 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 
-/* ====== LINKS GENERALES ====== */
-a {
-  font-family: 'Lora', serif;
-  text-decoration: none;
-  color: #fff;
-  transition: color 0.3s ease;
+/* ====== VARIABLES DE COLOR ====== */
+:root {
+  --color-naranja: #ff8c00;
+  --color-texto: #333;
+  --color-fondo: #fff;
+  --color-gris-claro: #f5f5f5;
 }
 
-a:hover {
-  color: orange;
-}
-
-/* ====== MENÚ SUPERIOR ===== */
-.menu-container {
-  background: #fff;
+/* ====== MENÚ AISLADO ===== */
+.Menu .menu-container {
+  background: var(--color-fondo);
   position: relative;
   z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.menu-row {
+.Menu .menu-row {
   display: flex;
   align-items: center;
   height: 80px;
@@ -31,23 +28,22 @@ a:hover {
 }
 
 /* ====== LOGO ===== */
-.menu-logo img {
-  max-height: 160px;
+.Menu .menu-logo img {
+  max-height: 60px;
   width: auto;
   margin-left: 15px;
-  pointer-events: none;
-  user-select: none;
+  transition: transform 0.3s ease;
 }
 
-/* ====== LINKS DEL MENÚ ===== */
-.navbar-nav {
-  margin-left: 20px;
+.Menu .menu-logo:hover img {
+  transform: scale(1.05);
 }
 
-.navbar-nav > li > a {
+/* ====== LINKS DEL MENÚ PRINCIPAL ===== */
+.Menu .menu-principal > li > a {
   display: inline-block;
-  padding: 0 10px;
-  color: black;
+  padding: 0 15px;
+  color: var(--color-texto);
   line-height: 80px;
   vertical-align: middle;
   transition: color 0.2s ease;
@@ -57,22 +53,43 @@ a:hover {
   font-size: 20px;
 }
 
-.navbar-nav > li > a:hover,
-.navbar-nav > li > a:focus {
-  color: orange;
-  text-decoration: none;
+.Menu .menu-principal > li > a:hover {
+  color: var(--color-naranja);
 }
 
-/* ====== MENÚ PRINCIPAL Y SESIÓN ===== */
-.menu-principal {
-  display: flex;
-  justify-content: center;
+/* ====== DROPDOWN ===== */
+.Menu .menu-principal .dropdown > a,
+.Menu .menu-sesion .dropdown > a {
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   height: 80px;
-  width: 100%;
+  padding: 0 15px;
+  color: var(--color-texto);
+  text-decoration: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 20px;
+  transition: color 0.2s ease;
+  line-height: normal;
 }
 
-.menu-sesion {
+.Menu .menu-principal .dropdown > a:hover,
+.Menu .menu-sesion .dropdown > a:hover {
+  color: var(--color-naranja);
+}
+
+/* ====== FLECHA DROPDOWN ===== */
+.Menu .menu-principal .caret,
+.Menu .menu-sesion .caret {
+  margin-left: 8px;
+  border-top: 6px solid;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+}
+
+/* ====== MENÚ SESIÓN (DERECHA) ===== */
+.Menu .menu-sesion {
   display: flex;
   align-items: center;
   height: 80px;
@@ -80,35 +97,42 @@ a:hover {
   width: 100%;
 }
 
-/* ====== SUBMENÚ (DROPDOWN) ===== */
-.dropdown-menu {
-  border-radius: 8px;
-  padding: 8px 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  border: none;
-  min-width: 180px;
-  animation: fadeDown 0.25s ease;
-  margin-top: 5px;
-  font-family: 'Lora', serif;
+.Menu .menu-sesion > li > a i {
+  margin-right: 8px;
 }
 
-.dropdown-menu > li > a {
+/* ====== SUBMENÚ (DROPDOWN) ===== */
+.Menu .dropdown-menu {
+  border-radius: 8px;
+  padding: 10px 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border: none;
+  min-width: 200px;
+  margin-top: 10px;
+  font-family: 'Lora', serif;
+  animation: fadeDown 0.3s ease;
+}
+
+.Menu .dropdown-menu > li > a {
   display: block;
-  padding: 10px 20px;
-  color: #333;
+  padding: 12px 20px;
+  color: var(--color-texto);
   font-weight: 500;
   transition: all 0.2s ease;
   text-decoration: none;
 }
 
-.dropdown-menu > li > a:hover {
-  background-color: #f5f5f5;
-  color: orange;
-  border-radius: 6px;
+.Menu .dropdown-menu > li > a:hover {
+  background-color: var(--color-gris-claro);
+  color: var(--color-naranja);
   padding-left: 25px;
 }
 
-/* ====== ANIMACIÓN DEL DROPDOWN ===== */
+.Menu .dropdown-menu > li > a i {
+  margin-right: 10px;
+}
+
+/* ====== ANIMACIÓN ===== */
 @keyframes fadeDown {
   from {
     opacity: 0;
@@ -117,5 +141,45 @@ a:hover {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ====== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .Menu .menu-row {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .Menu .menu-principal,
+  .Menu .menu-sesion {
+    width: 100%;
+    justify-content: center;
+    height: auto;
+    margin-top: 10px;
+  }
+
+  .Menu .navbar-nav > li {
+    float: none;
+    display: block;
+    text-align: center;
+  }
+
+  .Menu .menu-principal > li > a,
+  .Menu .menu-principal .dropdown > a,
+  .Menu .menu-sesion .dropdown > a {
+    line-height: 50px;
+    height: auto;
+  }
+
+  .Menu .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    margin-top: 0;
+    display: none;
+  }
+
+  .Menu .dropdown.open .dropdown-menu {
+    display: block;
   }
 }

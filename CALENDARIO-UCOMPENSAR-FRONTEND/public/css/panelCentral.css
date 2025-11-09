@@ -165,3 +165,6 @@
             to { transform: translateY(0); opacity: 1; }
         }
 
+.table td {
+  vertical-align: middle !important;
+}

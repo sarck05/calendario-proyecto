@@ -49,10 +49,27 @@
       </div>
   </div>
 
-  <div class="row final">
-    <div class="col-md-12"></div>
-  </div>
-
-    </body>
-  </html>
+    <footer class="text-center text-white" style="background-color: #1c1c1c; padding: 30px 0;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h4>UCompensar</h4>
+            <p>Dirección: Calle xx # xx-xx<br>Teléfono: +57 xx xxx xxxx<br>Correo: contacto@xx.edu.co</p>
+          </div>
+          <div class="col-md-4">
+            
+          </div>
+          <div class="col-md-4">
+            <h4>Síguenos</h4>
+            <a href="#" class="text-white"><i class="bi bi-facebook" style="font-size: 1.5rem; margin: 0 5px;"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-instagram" style="font-size: 1.5rem; margin: 0 5px;"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-twitter-x" style="font-size: 1.5rem; margin: 0 5px;"></i></a>
+          </div>
+        </div>
+        <hr style="border-color: #555;">
+        <p class="small">© 2025 UCompensar - Todos los derechos reservados | Desarrollado por xx</p>
+      </div>
+    </footer>
+  </body>
+</html>
 
