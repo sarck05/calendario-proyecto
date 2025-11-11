@@ -24,7 +24,7 @@ $rol = $logeado ? $_SESSION['usuario_rol'] : '';
           <li><a href="/index.php">Inicio</a></li>
           <li><a href="/src/Pages/Calendario/calendario.php">Calendario</a></li>
           <li><a href="/src/Pages/Eventos/eventos.php">Eventos</a></li>
-          <li><a href="/src/Pages/Calendario/noticias.php">Noticias</a></li>
+          <li><a href="/src/Pages/Noticias/noticias.php">Noticias</a></li>
           <li><a href="/src/Pages/Sesion/Contacto.php">Contáctanos</a></li>
         </ul>
       </div>
