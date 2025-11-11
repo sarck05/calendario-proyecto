@@ -376,3 +376,30 @@
     .container { padding-left: 15px; padding-right: 15px; }
     .event-card { margin-bottom: 1.5rem; }
 }
+
+/* === ESPACIADO ENTRE FILAS Y COLUMNAS DE EVENTOS === */
+#listaEventos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; /* Espacio entre columnas y filas */
+    justify-content: flex-start;
+}
+
+#listaEventos .col-md-4 {
+    flex: 1 1 calc(33.333% - 25px);
+    max-width: calc(33.333% - 25px);
+}
+
+@media (max-width: 992px) {
+    #listaEventos .col-md-4 {
+        flex: 1 1 calc(50% - 25px);
+        max-width: calc(50% - 25px);
+    }
+}
+
+@media (max-width: 576px) {
+    #listaEventos .col-md-4 {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}

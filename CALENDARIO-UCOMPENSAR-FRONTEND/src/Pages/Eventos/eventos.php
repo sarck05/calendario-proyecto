@@ -81,7 +81,7 @@ if ($result && $result->num_rows > 0) {
                 <p>Vuelve pronto para conocer nuestras nuevas actividades.</p>
             </div>
         <?php else: ?>
-            <div class="row" id="listaEventos">
+            <div id="listaEventos">
                 <?php foreach ($events_data as $ev): ?>
                     <div class="col-md-4 mb-4">
                         <div class="event-card shadow-sm">
